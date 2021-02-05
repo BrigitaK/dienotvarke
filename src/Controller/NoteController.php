@@ -58,20 +58,6 @@ class NoteController extends AbstractController
         ->getRepository(Status::class)
         ->findBy([],['title' => 'asc']);
 
-        $errors = $validator->validate($note);
-
-
-        if (count($errors) > 0) {
-
-            foreach($errors as $error) {
-                $r->getSession()->getFlashBag()->add('errors', $error->getMessage());
-            }
-            $r->getSession()->getFlashBag()->add('note_title', $r->request->get('note_title'));
-            $r->getSession()->getFlashBag()->add('note_priority', $r->request->get('note_priority'));
-            $r->getSession()->getFlashBag()->add('note_note', $r->request->get('note_note'));
-
-            return $this->redirectToRoute('note_create');
-        }
 
         return $this->render('note/create.html.twig', [
             'statuss' => $statuss,
@@ -97,6 +83,22 @@ class NoteController extends AbstractController
         setNote((int)$r->request->get('note_note'))->
         setStatus($status);
        
+
+        $errors = $validator->validate($note);
+
+
+        if (count($errors) > 0) {
+
+            foreach($errors as $error) {
+                $r->getSession()->getFlashBag()->add('errors', $error->getMessage());
+            }
+            $r->getSession()->getFlashBag()->add('note_title', $r->request->get('note_title'));
+            $r->getSession()->getFlashBag()->add('note_priority', $r->request->get('note_priority'));
+            $r->getSession()->getFlashBag()->add('note_note', $r->request->get('note_note'));
+
+            return $this->redirectToRoute('note_create');
+        }
+        
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($note);
         $entityManager->flush();

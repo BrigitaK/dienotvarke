@@ -64,7 +64,7 @@ class StatusController extends AbstractController
         $status->
         setTitle($r->request->get('status_title'));
 
-        $errors = $validator->validate($master);
+        $errors = $validator->validate($status);
 
 
         if (count($errors) > 0) {
@@ -146,7 +146,7 @@ class StatusController extends AbstractController
         ->getRepository(Status::class)
         ->find($id);
 
-        if ($status->getOutfits()->count() > 0) {
+        if ($status->getNotes()->count() > 0) {
             return new Response('Šio statuso ištrinti negalima, nes turi gaminių.');
         }
 

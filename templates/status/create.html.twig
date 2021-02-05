@@ -10,6 +10,7 @@
             <div class="add-btn">
                 <button class="add" type="submit">Add new Status</button>
             </div>
+            <input type="hidden" name="token" value="{{ csrf_token('') }}"/>
         </form>
     <div>
 {% endblock %}
