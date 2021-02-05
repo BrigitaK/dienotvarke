@@ -1,23 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}notes List!{% endblock %}
+{% block title %}Idet new note!{% endblock %}
 
 {% block body %}
-    <h1 class="title">notes in Library</h1>
-    <div class="title2">notes list:</div>
-    <ul>
-    {% for note in notes %}
-        <div class="list">
-            <div class="name-prop">{{note.type}} </div>
-            <div class="delete-btn">
-                <form action="{{ path('note_delete', {id: note.id}) }}" method="POST">
-                <button class="delete" type="submit">DELETE</button>
-                </form>
+    <h1 class="title">Idet new note! </h1>
+    <div class="list">
+        <form action="{{path('note_update', {id: note.id})}}" method="POST">
+            <div class="create-name">Title:<input class="input" type="text" name="note_title" value="{{note.title}}"></div>
+            <div class="create-name">Priority:<input class="input" type="text" name="note_priority" value="{{note.priority}}"></div>
+            <div class="create-name">Note:<textarea class="input" name="note_note">{{note.note}}</textarea></div>
+            <select class="select" name="note_status_id">
+            {% for status in statuss %}
+            <option  value="{{status.id}}">{{status.title}}</option>
+            {% endfor %}
+            </select>
+            <div class="add-btn">
+                <button class="add" type="submit">Edit note</button>
             </div>
-            <div class="edit-btn">
-                <a class="edit" href="{{ path('note_edit', {id: note.id}) }}">Edit note</a>
-            </div>
-        </div>
-    {% endfor %}
-    </ul>
+        </form>
+    </div>
 {% endblock %}

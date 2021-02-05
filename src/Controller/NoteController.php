@@ -82,13 +82,13 @@ class NoteController extends AbstractController
      */
     public function update(Request $r, $id): Response
     {
-        // $note = $this->getDoctrine()
-        // ->getRepository(Note::class)
-        // ->find($id);
+        $note = $this->getDoctrine()
+        ->getRepository(Note::class)
+        ->find($id);
 
-        $status = $this->getDoctrine()
-         ->getRepository(Status::class)
-         ->find($r->request->get('note_status_id'));
+        // $status = $this->getDoctrine()
+        //  ->getRepository(Status::class)
+        //  ->find($r->request->get('note_status_id'));
 
          $note->
         setTitle($r->request->get('note_title'))->

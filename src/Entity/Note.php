@@ -28,7 +28,7 @@ class Note
     private $priority;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private $note;
 
