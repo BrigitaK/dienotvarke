@@ -35,7 +35,7 @@ class Note
     /**
      * @ORM\Column(type="integer")
      */
-    private $statuse_id;
+    private $status_id;
 
     public function getId(): ?int
     {
@@ -78,14 +78,14 @@ class Note
         return $this;
     }
 
-    public function getStatuseId(): ?int
+    public function getStatusId(): ?int
     {
-        return $this->statuse_id;
+        return $this->status_id;
     }
 
-    public function setStatuseId(int $statuse_id): self
+    public function setStatusId(int $status_id): self
     {
-        $this->statuse_id = $statuse_id;
+        $this->status_id = $status_id;
 
         return $this;
     }

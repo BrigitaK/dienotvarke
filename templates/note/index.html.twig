@@ -1,20 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello NoteController!{% endblock %}
+{% block title %}notes List!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1 class="title">notes in Library</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/dashboard/dienotvarke/src/Controller/NoteController.php'|file_link(0) }}">src/Controller/NoteController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/dashboard/dienotvarke/templates/note/index.html.twig'|file_link(0) }}">templates/note/index.html.twig</a></code></li>
-    </ul>
-</div>
+    {# <div class="sort">
+        <div class="title2 title-filter">List filter by:</div>
+        <form action="{{ path('note_index')}}" method="GET">
+            <select class="select-filter" name="type">
+            <option value="default">View All</option>
+                {% for note in notes %}
+                <option value="{{note.type}}" {% if noteType == note.type %} selected {% endif %}>{{note.type}}</option>
+                {% endfor %}
+            </select>
+            <div class="sort-btn">
+                <button class="edit" type="submit">Filter it!</button>
+            </div>
+        </form>
+        <div class="clear-btn">
+            <a class="delete" href="{{ path('note_index')}}">clear</a>
+        </div>
+    </div> #}
+    {% for note in notes %}
+        <div class="list-p">
+            <div class="name-prop">{{note.title}} </div>
+            <div class="delete-btn">
+                <form action="{{ path('note_delete', {id: note.id}) }}" method="POST">
+                <button class="delete" type="submit">DELETE</button>
+                </form>
+            </div>
+            <div class="edit-btn">
+                <a class="edit" href="{{ path('note_edit', {id: note.id}) }}">Edit note</a>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

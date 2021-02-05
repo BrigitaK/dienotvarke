@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}notes List!{% endblock %}
+
+{% block body %}
+    <h1 class="title">notes in Library</h1>
+    <div class="title2">notes list:</div>
+    <ul>
+    {% for note in notes %}
+        <div class="list">
+            <div class="name-prop">{{note.type}} </div>
+            <div class="delete-btn">
+                <form action="{{ path('note_delete', {id: note.id}) }}" method="POST">
+                <button class="delete" type="submit">DELETE</button>
+                </form>
+            </div>
+            <div class="edit-btn">
+                <a class="edit" href="{{ path('note_edit', {id: note.id}) }}">Edit note</a>
+            </div>
+        </div>
+    {% endfor %}
+    </ul>
+{% endblock %}
