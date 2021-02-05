@@ -4,17 +4,15 @@
 
 {% block body %}
 
-    <h1 class="title">status in Library</h1>
+    <h1 class="title">Statuses</h1>
 
-    {# <div class="sort">
+    <div class="sort">
         <div class="title2 title-sort">statuss list order by:</div>
             <form action="{{ path('status_index')}}" method="GET">
                 <select class="select-sort" name="sort">
                     <option value="default">default</option>
-                    <option value="name_az" {% if sortBy == 'name_az' %} selected {% endif %}>name</option>
-                    <option value="name_za" {% if sortBy == 'name_za' %} selected {% endif %}>name reverse</option>
-                    <option value="surname_az" {% if sortBy == 'surname_az' %} selected {% endif %}>surname</option>
-                    <option value="surname_za" {% if sortBy == 'surname_za' %} selected {% endif %}>surname reverse</option>
+                    <option value="title_az" {% if sortBy == 'title_az' %} selected {% endif %}>title</option>
+                    <option value="title_za" {% if sortBy == 'title_za' %} selected {% endif %}>title reverse</option>
                 </select>
                 <div class="sort-btn">
                     <button class="edit" type="submit">Sort it!</button>
@@ -24,7 +22,7 @@
             <div class="clear-btn">
                 <a class="delete" action="{{ path('status_index')}}">clear</a>
             </div>
-    </div> #}
+    </div>
     {% for status in statuss %}
         <div class="list-p">
             <div class="name-surname">{{status.title}}</div>

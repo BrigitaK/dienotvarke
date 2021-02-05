@@ -2,12 +2,52 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Welcome!{% endblock %}</title> 
+        <link href="http://localhost:8888/dashboard/dienotvarke/public/build/app.css" rel="stylesheet"/>
+
+        <link href="{{ asset('css/layout.css') }}" rel="stylesheet"/>
+
+
+        <script src="http://localhost:8888/dashboard/dienotvarke/public/build/app.js" defer></script>
+
+<!-- include libraries(jQuery, bootstrap) -->
+
+
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
         {% block stylesheets %}{% endblock %}
 
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% if errors is defined and errors|length > 0 %}
+    {% include 'msg/validation.html.twig' %}
+    {% endif %}
+    {% if success is defined and success|length > 0 %}
+    {% include 'msg/success.html.twig' %}
+    {% endif %}
+    <div class="block">
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="container-block"> 
+            <div class="menu">
+                <a class="logo" href="#"><span class="name">Daily</span></a>
+                <a class="logo" href="#"><span class="name2">routine</span></a>
+                <nav class="nav-item">
+                <a class="nav-a" href="http://localhost:8888/dashboard/dienotvarke/public/index.php/status">Status</a>
+                <a class="nav-a" href="http://localhost:8888/dashboard/dienotvarke/public/index.php/status/create">Add status</a>
+                <a class="nav-a" href="http://localhost:8888/dashboard/dienotvarke/public/index.php/note">Note</a>
+                <a class="nav-a" href="http://localhost:8888/dashboard/dienotvarke/public/index.php/note/create">Add note</a>
+                <a class="loggout nav-a nav-link" href="{{ path('app_logout') }}">Logout</a>
+                <a class="nav-user" href="#">{{ app.user.username }}</a>
+                </nav>
+            </div>
+            <div class="container1">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
     </body>
 </html>

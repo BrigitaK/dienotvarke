@@ -1,21 +1,68 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title> 
+        <link href="http://localhost:8888/dashboard/mados_namai_lara/public/build/app.css" rel="stylesheet"/>
 
-{% block title %}Register{% endblock %}
+        <link href="{{ asset('css/layout.css') }}" rel="stylesheet"/>
 
+        <script src="http://localhost:8888/dashboard/mados_namai_lara/public/build/app.js" defer></script>
+
+<!-- include libraries(jQuery, bootstrap) -->
+
+
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+        {% block stylesheets %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+    {% if errors is defined and errors|length > 0 %}
+    {% include 'msg/validation.html.twig' %}
+    {% endif %}
+    {% if success is defined and success|length > 0 %}
+    {% include 'msg/success.html.twig' %}
+    {% endif %}
+    <div class="block-login">
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="container-block-login"> 
+            <div class="container1-login">
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
+						<h1 class="title-login">Register</h1>
+					
 
-    <h1>Register</h1>
+					<div class="card-body">
+						{{ form_start(registrationForm, { 'attr': {'class': 'create-input-login'} }) }}
+						<div class="form-group">
+							{{ form_row(registrationForm.email, { attr: {'class': 'input input-align', placeholder: 'Email address'} }) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+						</div>
+						<div class="form-group">
+							{{ form_row(registrationForm.plainPassword, {
+            attr: {'class': 'input input-align', placeholder: 'Password'}
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+						</div>
+<div class="create-agree">
+						{{ form_row(registrationForm.agreeTerms, { attr: {'class': 'create-check'} }) }}
+</div>
+<div class="btn-align left">
+						<button type="submit" class="sign btn  btn-primary">Register</button>
+                        </div>
+						{{ form_end(registrationForm) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+
+
 {% endblock %}
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

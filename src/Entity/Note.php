@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NoteRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=NoteRepository::class)
@@ -19,16 +20,26 @@ class Note
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Title should not be blank.")
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Title must be at least {{ limit }} characters long.",
+     *      maxMessage = "Title cannot be longer than {{ limit }} characters."
+     * )
+     * 
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="priority should not be blank.")
      */
     private $priority;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="note should not be blank.")
      */
     private $note;
 

@@ -8,7 +8,7 @@
         <form action="{{path('note_update', {id: note.id})}}" method="POST">
             <div class="create-name">Title:<input class="input" type="text" name="note_title" value="{{note.title}}"></div>
             <div class="create-name">Priority:<input class="input" type="text" name="note_priority" value="{{note.priority}}"></div>
-            <div class="create-name">Note:<textarea class="input" name="note_note">{{note.note}}</textarea></div>
+            <div class="create-name">Note:<textarea class="input" name="note_note" id="summernote">{{note.note}}</textarea></div>
             <select class="select" name="note_status_id">
             {% for status in statuss %}
             <option  value="{{status.id}}" {% if status.id == note.statusId %} selected {% endif %}>{{status.title}}</option>

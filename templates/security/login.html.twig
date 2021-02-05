@@ -1,6 +1,38 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title> 
+        <link href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/build/app.css" rel="stylesheet"/>
 
-{% block title %}Log in!{% endblock %}
+        <link href="{{ asset('css/layout.css') }}" rel="stylesheet"/>
+
+
+        <script src="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/build/app.js" defer></script>
+
+<!-- include libraries(jQuery, bootstrap) -->
+
+
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+        {% block stylesheets %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+    {% if errors is defined and errors|length > 0 %}
+    {% include 'msg/validation.html.twig' %}
+    {% endif %}
+    {% if success is defined and success|length > 0 %}
+    {% include 'msg/success.html.twig' %}
+    {% endif %}
+    <div class="block-login">
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="container-block-login"> 
+            <div class="container1-login">
 
 {% block body %}
 <form method="post">
@@ -9,34 +41,32 @@
     {% endif %}
 
     {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+    <div class="log-top">
+        <div class="logged mb-3">You are logged in as {{ app.user.username }}</div> 
+        <div class="logout">
+            <a class="add" href="{{ path('app_logout') }}">Logout</a>
         </div>
+    </div>
+        
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+    <h1 class="title-login h3 mb-3">Please sign in</h1>
+    <div class="list">
+        <label class="create-input-login" for="inputEmail">
+        <input class="input input-align" placeholder="Email address" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus></label>
+        <label class="create-input-login" for="Password">
+        <input class="input input-align" placeholder="Password" type="password" name="password" id="inputPassword" class="form-control" required></label>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}">
+        <div class="btn-align">
+            <button class="sign btn btn-lg btn-primary" type="submit">Sign in</button>
         </div>
-    #}
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    </div>
 </form>
 {% endblock %}
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
