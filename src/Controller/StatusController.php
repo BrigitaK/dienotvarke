@@ -82,7 +82,7 @@ class StatusController extends AbstractController
         $entityManager->persist($status);
         $entityManager->flush();
 
-        $r->getSession()->getFlashBag()->add('success', 'status sekmingai pridetas');
+        $r->getSession()->getFlashBag()->add('success', 'Status successfully added.');
 
         return $this->redirectToRoute('status_index');
     }
@@ -133,7 +133,7 @@ class StatusController extends AbstractController
         $entityManager->persist($status);
         $entityManager->flush();
 
-        $r->getSession()->getFlashBag()->add('success', 'status sekmingai pakeistas');
+        $r->getSession()->getFlashBag()->add('success', 'Status successfully edited.');
 
         return $this->redirectToRoute('status_index');
     }

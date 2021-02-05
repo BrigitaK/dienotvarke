@@ -26,9 +26,9 @@
     {% for status in statuss %}
         <div class="list-p">
             <div class="name-surname">{{status.title}}</div>
-            {# {% for outfit in status.outfits %}
-                <div class="count">{{outfit.type}}</div>
-            {% endfor %} #}
+            {% for note in status.notes %}
+                <div class="count">{{note.title}}</div>
+            {% endfor %}
             <div class="delete-btn">
                 <form action="{{ path('status_delete', {id: status.id}) }}" method="POST">
                 <button class="delete" type="submit">DELETE</button>

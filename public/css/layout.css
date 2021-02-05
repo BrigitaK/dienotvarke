@@ -271,7 +271,7 @@ body {
         .count {
             display: inline-block;
             float: left;
-            width: 18%;
+            width: 30%;
             margin-top: 5px;
         }
         .add {
@@ -308,7 +308,7 @@ body {
         .create-name, .create-surname {
             display: inline-block;
             float: left;
-            width: 50%;
+            width: 36%;
             font-size: 20px;
             line-height: 25px;
             margin-bottom: 10px;
@@ -347,7 +347,7 @@ body {
             line-height: 25px;
             border: 2px solid #E5E5E5;
             border-radius: 5px;
-            width:95%;
+            width:88%;
             outline: none;
             padding-left: 5px;
         }
@@ -362,7 +362,7 @@ body {
             border-radius: 5px;
             outline: none;
             margin-top: 25px;
-            width: 48%;
+            width: 25%;
         }
         .select-sort {
             display: inline-block;
@@ -461,4 +461,33 @@ body {
         }
         .card-body .form-group label {
             display: none !important;
+        }
+        .error-block {
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 400px;
+            background-color: red;
+            margin-left: calc(50% - 200px);
+            margin-top: 56px;
+            padding: 20px;
+            border-radius: 5px;
+            margin-right: auto;
+        }
+
+        .error-msg {
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 270px;
+            background-color: green;
+            margin-left: calc(50% - 165px);
+            margin-top: 56px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            margin-right: auto;
+        }
+        .list-p .name-prop .name-prop2 {
+            min-width: 100px;
         }

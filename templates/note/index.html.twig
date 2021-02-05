@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}notes List!{% endblock %}
+{% block title %}Notes List!{% endblock %}
 
 {% block body %}
-    <h1 class="title">Notes</h1>
 
-    {# <div class="sort">
+    <h1 class="title">Notes</h1>
+    <div class="sort">
         <div class="title2 title-filter">List filter by:</div>
         <form action="{{ path('note_index')}}" method="GET">
-            <select class="select-filter" name="type">
-            <option value="default">View All</option>
-                {% for note in notes %}
-                <option value="{{note.type}}" {% if noteType == note.type %} selected {% endif %}>{{note.type}}</option>
+            <select class="select-filter" name="status_id">
+            <option value="0">View All</option>
+                {% for status in statuss %}
+                <option value="{{status.id}}" {% if statusId == status.id %} selected {% endif %}>{{status.title}}</option>
                 {% endfor %}
             </select>
             <div class="sort-btn">
@@ -21,18 +21,19 @@
         <div class="clear-btn">
             <a class="delete" href="{{ path('note_index')}}">clear</a>
         </div>
-    </div> #}
+    </div>
     {% for note in notes %}
         <div class="list-p">
-            <div class="name-prop">{{note.title}} </div>
+            <div class="name-prop"><span class="name-prop2">{{note.title}} </span><span class="name-prop1">status: {{note.status.title}}</span></div>
             <div class="delete-btn">
                 <form action="{{ path('note_delete', {id: note.id}) }}" method="POST">
                 <button class="delete" type="submit">DELETE</button>
                 </form>
             </div>
             <div class="edit-btn">
-                <a class="edit" href="{{ path('note_edit', {id: note.id}) }}">Edit note</a>
+                <a  class="edit" href="{{ path('note_edit', {id: note.id}) }}">Edit note</a>
             </div>
         </div>
+        
     {% endfor %}
 {% endblock %}

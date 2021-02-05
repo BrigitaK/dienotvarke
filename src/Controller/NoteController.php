@@ -25,21 +25,17 @@ class NoteController extends AbstractController
 
         $notes = $this->getDoctrine()
         ->getRepository(Note::class);
-          if(null !== $r->query->get('title')){
-            $notes = $notes->findBy(['title' => $r->query->get('title')]);
-        }
-        elseif ($r->query->get('title') == 0) {
-            $notes = $notes->findAll(); 
+        if(null !== $r->query->get('status_id')){
+            $notes = $notes->findBy(['status_id' => $r->query->get('status_id')], ['title' => 'asc']);
         }
         else {
             $notes = $notes->findAll();
-        };
+        }
         
         return $this->render('note/index.html.twig', [
             'notes' => $notes,
             'statuss' => $statuss,
-            'outfitType' => $r->query->get('type') ?? 'default',
-            'sortBy' => $r->query->get('sort') ?? 'default',
+            'statusId' => $r->query->get('status_id') ?? 0,
             'success' => $r->getSession()->getFlashBag()->get('success', [])
         ]);
     }
@@ -98,7 +94,7 @@ class NoteController extends AbstractController
 
             return $this->redirectToRoute('note_create');
         }
-        
+
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($note);
         $entityManager->flush();
@@ -152,7 +148,7 @@ class NoteController extends AbstractController
         setNote((int)$r->request->get('note_note'))->
         setStatus($status);
 
-        $errors = $validator->validate($outfit);
+        $errors = $validator->validate($note);
 
 
         if (count($errors) > 0) {

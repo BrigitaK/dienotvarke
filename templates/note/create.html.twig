@@ -8,12 +8,12 @@
         <form action="{{path('note_store')}}" method="POST">
             <div class="create-name">Title:<input class="input" type="text" name="note_title"></div>
             <div class="create-name">Priority:<input class="input" type="text" name="note_priority"></div>
-            <div class="create-name">Note:<textarea class="input" name="note_note" id="summernote"></textarea></div>
-            <select class="select" name="note_status_id">
+             <select class="select" name="note_status_id">
             {% for status in statuss %}
             <option  value="{{status.id}}">{{status.title}}</option>
             {% endfor %}
             </select>
+            <div class="create-name-about">Note:<textarea class="input" name="note_note" id="summernote"></textarea></div>
             <div class="add-btn">
                 <button class="add" type="submit">Add new note</button>
             </div>
