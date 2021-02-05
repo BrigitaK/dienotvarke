@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create new Status!{% endblock %}
+
+{% block body %}
+    <h1 class="title">Create new Status!</h1>
+    <div class="list">
+        <form action="{{path('status_store')}}" method="POST">
+            <div class="create-name">Name: <input class="input" type="text" name="status_title"></div>
+            <div class="add-btn">
+                <button class="add" type="submit">Add new Status</button>
+            </div>
+        </form>
+    <div>
+{% endblock %}
