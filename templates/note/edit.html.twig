@@ -11,7 +11,7 @@
             <div class="create-name">Note:<textarea class="input" name="note_note">{{note.note}}</textarea></div>
             <select class="select" name="note_status_id">
             {% for status in statuss %}
-            <option  value="{{status.id}}">{{status.title}}</option>
+            <option  value="{{status.id}}" {% if status.id == note.statusId %} selected {% endif %}>{{status.title}}</option>
             {% endfor %}
             </select>
             <div class="add-btn">

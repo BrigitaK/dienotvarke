@@ -37,6 +37,11 @@ class Note
      */
     private $status_id;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Status::class, inversedBy="notes")
+     */
+    private $status;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Note
     public function setStatusId(int $status_id): self
     {
         $this->status_id = $status_id;
+
+        return $this;
+    }
+
+    public function getStatus(): ?Status
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?Status $status): self
+    {
+        $this->status = $status;
 
         return $this;
     }
