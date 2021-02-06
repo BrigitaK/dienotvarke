@@ -1,5 +1,5 @@
 body {
-    background-color:#9598f7;
+    background-color:#dfe3e7;
     width: 100%;
     position: relative;
    
@@ -16,6 +16,20 @@ body {
     overflow: visible;
     opacity: 0.1;
     border-radius: 50%;
+}
+.dots {
+    display: inline-block;
+    content: '';
+    height: 7px;
+    width: 7px;
+    margin-right: 5px;
+    background-color: #519a2d;
+    border-radius: 50%;
+    bottom: 11px;
+    position: absolute;
+}
+.nav-user-email {
+    margin-left: 12px;
 }
 .circle2 {
     top: 30px;
@@ -37,6 +51,7 @@ body {
     margin-right: auto;
     position: relative;
     background-color: #353b5d;
+    margin-top: 80px;
 }
 .block-login {
     width: 100%;
@@ -63,16 +78,16 @@ body {
     margin-top: 80px;
     position: absolute;
 }
-    .container-block .menu {
+    .block .menu {
         width: 180px;
         float:left;
-        padding-top: 70px;
-        background-color: #353b5d;
-        color: #fff;
-        border-bottom-left-radius: 20px;
-        border-top-left-radius: 20px;
+        padding-top: 35px;
+        background-color: #fff;
+        color: #000;
+        border-radius: 10px;
+        margin-right: 10px;
     }
-    .container-block .menu .logo {
+    .block .menu .logo {
         display: inline-block;
         width: 180px;
         text-align: center;
@@ -82,34 +97,43 @@ body {
         font-size: 23px;
         line-height: 30px;
     }
-    .container-block .menu .logo .name {
+    .block .menu .logo1 {
+        display: inline-block;
+        width: 180px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Brush Script MT';
+        font-size: 23px;
+        line-height: 30px;
+        margin-top: -8px;
+        margin-bottom: 20px;
+    }
+    .block .menu .logo .name {
         font-size: 66px;
         font-family: 'Brush Script MT';
+        color: #6d647a;
 
     }
-    .container-block .menu .logo .name2 {
+    .block .menu .logo1 .name2 {
         font-family: 'Brush Script MT';
         font-size: 40px;
-
+        color: #6d647a;
+        margin-right: 27px;
     }
     nav {
-        display: inline-block;
-        float: right;
-        margin-left: 10px;
     }
     .nav-user {
-        border: 1px solid grey;
         display: inline-block;
-        margin-left: 20px;
+        margin-left: 25px;
         padding: 5px;
-        border-radius: 4px;
-        color: #ffff;
+        color: #c2c7c9;
         text-decoration: none;
         position: relative;
-        text-transform: uppercase;
         font-weight: bold;
         font-size: 14px;
         margin-top: 5px;
+        margin-bottom: 20px;
     }
     nav .nav-a:first-child {
         margin-top: 30px;
@@ -122,7 +146,7 @@ body {
         float: left;
         margin-left: 30px;
         padding-bottom: 10px;
-        color: #ffff;
+        color: #626262;
         text-decoration: none;
         position: relative;
         text-transform: uppercase;
@@ -146,16 +170,27 @@ body {
         left: 0;
         right: 0;
     }
+    .men-user {
+        background-color: #f8f8f8;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .men-user-title {
+        padding-left: 29px;
+        font-size: 16px;
+        font-weight: 600;
+        padding-top: 10px;
+        color: #4c4c4c;
+    }
     .container1 {
-        width:calc(100% - 180px);
+        width:calc(100% - 190px);
         float: left;
         min-height: 445px;
         background-color: #fff;
         padding-left: 20px;
         padding-right: 20px;
         border-left: 1px solid #E5E5E5;
-        border-bottom-right-radius: 20px;
-        border-top-right-radius: 20px;
+        border-radius: 10px;
         padding-bottom: 70px;
     }
     .container1-login {
@@ -174,6 +209,14 @@ body {
             margin: 70px 0 30px;
             position: relative;
             margin-bottom: 60px;
+        }
+        .titl-login {
+            text-align: center;
+            font-weight: 600;
+            margin-top: 70px;
+            position: relative;
+            padding-bottom: 20px;
+            font-size: 37px;
         }
         .title-login {
             text-align: center;
@@ -242,6 +285,7 @@ body {
             font-size: 20px;
             background-color: #9b9b9b;
             color: #fff;
+            margin-top: 15px;
         }
         .delete {
             text-decoration: none;
@@ -491,3 +535,19 @@ body {
         .list-p .name-prop .name-prop2 {
             min-width: 100px;
         }
+        a {
+            color: #4c4c4c;
+            text-decoration: none;
+            background-color: transparent;
+            font-size: 16px;
+          }
+          a:hover {
+            color: #c2c7c9;
+            text-decoration: underline;
+          }
+          .dropdown-menu {
+              min-width: 140px;
+          }
+          .left {
+              margin-left: 15px;
+          }

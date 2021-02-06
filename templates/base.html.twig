@@ -9,6 +9,7 @@
 
 
         <script src="http://localhost:8888/dashboard/dienotvarke/public/build/app.js" defer></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"></script>
 
 <!-- include libraries(jQuery, bootstrap) -->
 
@@ -29,25 +30,50 @@
     {% include 'msg/success.html.twig' %}
     {% endif %}
     <div class="block">
-        <div class="circle"></div>
-        <div class="circle2"></div>
-        <div class="container-block"> 
+        {# <div class="circle"></div>
+        <div class="circle2"></div> #}
             <div class="menu">
                 <a class="logo" href="#"><span class="name">Daily</span></a>
-                <a class="logo" href="#"><span class="name2">routine</span></a>
+                <a class="logo1" href="#"><span class="name2">routine</span></a>
                 <nav class="nav-item">
-                <a class="nav-a" href="http://localhost:8888/dashboard/dienotvarke/public/index.php/status">Status</a>
-                <a class="nav-a" href="http://localhost:8888/dashboard/dienotvarke/public/index.php/status/create">Add status</a>
-                <a class="nav-a" href="http://localhost:8888/dashboard/dienotvarke/public/index.php/note">Note</a>
-                <a class="nav-a" href="http://localhost:8888/dashboard/dienotvarke/public/index.php/note/create">Add note</a>
-                <a class="loggout nav-a nav-link" href="{{ path('app_logout') }}">Logout</a>
-                <a class="nav-user" href="#">{{ app.user.username }}</a>
+                    <div class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Statuses
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right left " aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ path('status_index') }}">
+                                    Statuses list
+                                </a>
+                                <a class="dropdown-item" href="{{ path('status_create') }}">
+                                    New status
+                                </a>
+                            </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Notes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right left" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ path('note_index') }}">
+                                    Notes list
+                                </a>
+                                <a class="dropdown-item" href="{{ path('note_create') }}">
+                                    New note
+                                </a>
+                            </div>
+                    </div>
+                    <a class="loggout nav-link" href="{{ path('app_logout') }}">Logout</a>
+                    <div class="nav item men-user">
+                        <div class="men-user-title">Online user</div>
+                        <a class="nav-user" href="#">
+                            <span class="dots"></span>
+                            <span class="nav-user-email">{{ app.user.username }}</span></a>
+                    </div>
                 </nav>
             </div>
             <div class="container1">
                 {% block body %}{% endblock %}
             </div>
-        </div>
     </div>
     </body>
 </html>
