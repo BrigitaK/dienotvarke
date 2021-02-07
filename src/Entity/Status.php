@@ -22,11 +22,16 @@ class Status
 
     /**
      * @ORM\Column(type="string", length=64)
-     * @Assert\NotBlank(message="Vardas negali buti tuscias")
-     * @Assert\Length(
-     *      min = 3,
+    * @Assert\NotBlank(message="Title field can not be empty!")
+     * * @Assert\Length(
+     *      min = 2,
      *      max = 64,
-     *      minMessage = "Vardas per trumpas. Turi but bent {{ limit }} ilgio",
+     *      minMessage = "The title is too short. Minimum length is {{ limit }} characters",
+     *      maxMessage = "The title cannot be longer than {{ limit }} characters"
+     * )
+     * @Assert\Type(
+     *     type="alpha",
+     *     message="The value {{ value }} is not a valid {{ type }}."
      * )
      */
     private $title;

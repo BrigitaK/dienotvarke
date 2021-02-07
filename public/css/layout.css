@@ -675,16 +675,24 @@ body {
 
         .error-msg {
             display: block;
-            position: absolute;
+            position: fixed;
+            box-shadow: 0 0 25px rgb(0 0 0 / 20%);
             z-index: 1;
-            width: 270px;
-            background-color: green;
-            margin-left: calc(50% - 165px);
+            width: 250px;
+            background-color: #fff;
+            margin-left: 0;
             margin-top: 56px;
-            text-align: center;
             padding: 20px;
             border-radius: 5px;
             margin-right: auto;
+            bottom: 30px;
+            left: 30px;
+            color: green;
+            font-weight: 600;
+        }
+        .error-msg li {
+            color: green;
+            font-weight: 600;
         }
         .list-p .name-prop .name-prop2 {
             min-width: 100px;

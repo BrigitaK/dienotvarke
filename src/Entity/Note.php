@@ -20,12 +20,12 @@ class Note
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Title should not be blank.")
+     * @Assert\NotBlank(message="Title field can not be empty!")
      * @Assert\Length(
      *      min = 2,
      *      max = 255,
-     *      minMessage = "Title must be at least {{ limit }} characters long.",
-     *      maxMessage = "Title cannot be longer than {{ limit }} characters."
+     *      minMessage = "The title is too short. Minimum length is {{ limit }} characters",
+     *      maxMessage = "The title cannot be longer than {{ limit }} characters"
      * )
      * 
      */
@@ -33,13 +33,13 @@ class Note
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="priority should not be blank.")
+     * @Assert\NotBlank(message="Priority should not be blank.")
      */
     private $priority;
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\NotBlank(message="note should not be blank.")
+     * @Assert\NotBlank(message="Note should not be blank.")
      */
     private $note;
 
