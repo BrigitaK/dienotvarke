@@ -26,14 +26,11 @@
     {% for status in statuss %}
         <div class="list-p">
             <div class="name-surname">{{status.title}}</div>
-             <div class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Notes</a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> 
-                        {% for note in status.notes %}
-                            <div class="count">{{note.title}}</div>
-                        {% endfor %}
-                    </div>
-            </div>
+                <div class="count">
+                    {% for note in status.notes %}
+                            <div class="count-list">{{note.title}}</div>
+                    {% endfor %}
+                </div>
             <div class="delete-btn">
                 <form action="{{ path('status_delete', {id: status.id}) }}" method="POST">
                 <button class="delete" type="submit">DELETE</button>

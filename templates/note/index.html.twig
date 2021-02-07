@@ -24,7 +24,10 @@
     </div>
     {% for note in notes %}
         <div class="list-p">
-            <div class="name-prop"><span class="name-prop2">{{note.title}} </span><span class="name-prop1">status: {{note.status.title}}</span></div>
+            <div class="name-prop"><span class="name-prop2">{{note.title}} </span></div>
+            <div class="count-t">
+                <span class="">{{note.status.title}}</span>
+            </div>
             <div class="delete-btn">
                 <form action="{{ path('note_delete', {id: note.id}) }}" method="POST">
                 <button class="delete" type="submit">DELETE</button>
