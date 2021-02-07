@@ -729,8 +729,12 @@ body {
                 margin-top: 30px;
                 text-align: center;
                 margin-bottom: -10px;
-                text-align: center;
-                
+                text-align: center; 
+            }
+            .nav {
+
+                padding-left: 20px;
+                padding-right: 20px;
             }
                 .mob-menu nav.visible  a {
                     width: 100%;
@@ -763,3 +767,178 @@ body {
                     border-radius: 0;
                 }
 }
+    @media (max-width: 668px) {
+        .mob-menu .hamburger {
+            display: inline-block;
+        }
+        
+        .block .mob-menu .logo-mob .name2 {
+            margin-left: 11px;
+        }
+        .mob-menu nav {
+            display: none;
+            
+        }
+        .block .menu {
+            display: none;
+        }
+        .block .mob-menu {
+            display: inline-block;
+        }
+            .mob-menu nav.visible {
+                 width: 100%;
+                display: block;
+                margin-top: 30px;
+                text-align: center;
+                margin-bottom: -10px;
+                text-align: center;
+                
+            }
+                .mob-menu nav.visible  a {
+                    width: 100%;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    color: #000;
+                    font-weight: 600;
+                    line-height: 40px;
+                    border-top: 1px solid rgb(243, 239, 239);
+                    margin-left: 0px;
+                }
+                .mob-menu nav.visible .men-user {
+                    display: inline-block;
+                    width: 100%;
+                }
+                .mob-menu nav a::after {
+                    display: none;
+                }
+                .container1 {
+                    width:100%;
+                }
+                .block {
+                max-width: 500px;
+                }
+                .mob-menu-ico-h {
+                    display: block;
+                }
+                .men-user {
+                    border-radius: 0;
+                }
+}
+@media (max-width: 568px) {
+    .mob-menu .hamburger {
+        display: inline-block;
+    }
+    .block .mob-menu .logo-mob .name2 {
+        margin-left: 35px;
+    }
+    
+    .mob-menu nav {
+        display: none;
+        
+    }
+    .block .menu {
+        display: none;
+    }
+    .block .mob-menu {
+        display: inline-block;
+    }
+        .mob-menu nav.visible {
+             width: 100%;
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            margin-bottom: -10px;
+            text-align: center;
+            
+        }
+            .mob-menu nav.visible  a {
+                width: 100%;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 13px;
+                color: #000;
+                font-weight: 600;
+                line-height: 40px;
+                border-top: 1px solid rgb(243, 239, 239);
+                margin-left: 0px;
+            }
+            .mob-menu nav.visible .men-user {
+                display: inline-block;
+                width: 100%;
+            }
+            .mob-menu nav a::after {
+                display: none;
+            }
+            .container1 {
+                width:100%;
+            }
+            .block {
+            max-width: 400px;
+            }
+            .mob-menu-ico-h {
+                display: block;
+            }
+            .men-user {
+                border-radius: 0;
+            }
+}
+@media (width: 468px) {
+    .mob-menu .hamburger {
+        display: inline-block;
+    }
+    
+    .mob-menu nav {
+        display: none;
+        
+    }
+    .block .menu {
+        display: none;
+    }
+    .block .mob-menu {
+        display: inline-block;
+    }
+        .mob-menu nav.visible {
+             width: 100%;
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            margin-bottom: -10px;
+            text-align: center;
+            
+        }
+            .mob-menu nav.visible  a {
+                width: 100%;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 13px;
+                color: #000;
+                font-weight: 600;
+                line-height: 40px;
+                border-top: 1px solid rgb(243, 239, 239);
+                margin-left: 0px;
+            }
+            .mob-menu nav.visible .men-user {
+                display: inline-block;
+                width: 100%;
+            }
+            .mob-menu nav a::after {
+                display: none;
+            }
+            .container1 {
+                width:100%;
+            }
+            .block {
+            max-width: 350px;
+            }
+            .mob-menu-ico-h {
+                display: block;
+            }
+            .men-user {
+                border-radius: 0;
+            }
+}
+
+
+
+
