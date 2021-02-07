@@ -29,6 +29,18 @@ body {
     bottom: 11px;
     position: absolute;
 }
+.list-p .count .count-list .dot {
+    display: block;
+    content: '';
+    height: 7px;
+    width: 7px;
+    margin-right: 5px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 9px;
+    margin-left: -12px;
+}
 .nav-user-email {
     margin-left: 12px;
 }
@@ -88,6 +100,7 @@ body {
         color: #000;
         border-radius: 10px;
         margin-right: 10px;
+        box-shadow: 0 0 10px rgb(0 0 0 / 20%);
     }
     .block .mob-menu {
         display: none;
@@ -194,7 +207,8 @@ body {
         background-color: #fff;
         border-left: 1px solid #E5E5E5;
         border-radius: 10px;
-        padding-bottom: 70px;
+        padding-bottom: 50px;
+        box-shadow: 0 0 10px rgb(0 0 0 / 20%);
     }
     .container1-a {
         padding-left: 20px;
@@ -211,11 +225,14 @@ body {
         padding-bottom: 70px;
     }
         .title {
-            text-align: center;
+            text-align: left;
+            font-size: 31pt !important;
             font-weight: 400;
-            margin: 70px 0 30px;
+            margin: 45px 0 30px;
             position: relative;
-            margin-bottom: 60px;
+            border-bottom: 1px solid #c4c4c4;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
         }
         .titl-login {
             text-align: center;
@@ -233,7 +250,7 @@ body {
             padding-bottom: 20px;
             font-size: 37px;
         }
-        .title::after {
+        /* .title::after {
             width: 100px;
             height: 3px;
             background: #353b5d;
@@ -243,7 +260,7 @@ body {
             right: 0;
             margin: auto;
             bottom: -5px;
-        }
+        } */
         .title2 {
             margin-bottom: 10px;
             font-size: 18px;
@@ -252,8 +269,9 @@ body {
             display: inline-block;
             float: left;
             width: 100%;
-            border-bottom: 1px solid #353b5d;
-            margin-top: 10px;
+            border-bottom: 1px solid #c4c4c4;
+            margin-top: 5px;
+            padding-bottom: 5px;
         }
         .list-p:last-child {
             border: none;
@@ -267,21 +285,31 @@ body {
         .name-prop {
             display: inline-block;
             float: left;
+            line-height: 29px;
             width: 35%;
         }
         .name-prop1 {
             border-left: 1px solid #353b5d; 
             padding-left: 5px;
+            line-height: 29px;
         }
-        .edit, .add {
+        .edit{
             text-decoration: none;
-            border: 1px solid #E5E5E5;
+            border: none;
             border-radius: 10px;
             padding: 5px 10px;
-            text-transform: uppercase;
-            font-size: 15px;
+            font-size: 16px;
             background-color: #b2b2b2;
             color: #fff;
+        }
+        .sort {
+            padding: 0 15px;
+            border-radius: 3px;
+            line-height: 29px;
+            text-transform: none !important;
+            text-decoration: none;
+            border: none;
+
         }
         .sign {
             text-decoration: none;
@@ -296,26 +324,23 @@ body {
         }
         .delete {
             text-decoration: none;
-            border: 1px solid #E5E5E5;
+            border: none;
             border-radius: 10px;
             color: #fff;
             padding: 3px 10px;
             background-color: #dc0203;
-            text-transform: uppercase;
             font-size: 15px;
             margin-bottom: 10px;
+            text-transform: none !important;
         }
         .edit:hover, .add:hover{
-            background-color:  #ECECEC;
-            color: #3C3A3A;
-            text-transform: uppercase;
+            background-color: #c1c1c1 !important;
             outline: #1F1F1F;
             text-decoration: none;
         }
         .delete:hover{
             background-color:  #ff9797;
             color: #000;
-            text-transform: uppercase;
             outline: #1F1F1F;
             text-decoration: none;
         }
@@ -325,7 +350,7 @@ body {
             width: 43%;
             margin-bottom: 5px;
             margin-top: 5px;
-            border-left: 1px solid #353b5d; 
+            border-left: 1px solid #c4c4c4; 
             padding-left: 5px;
         }
         .count-list {
@@ -338,42 +363,115 @@ body {
             float: left;
             width: 30%;
             margin-top: 0;
-            border-left: 1px solid #353b5d; 
+            border-left: 1px solid #c4c4c4; 
             padding-left: 5px;
+            line-height: 29px;
         }
         .list-p .list-rot {
             margin-left: 60px;
         }
-        .add {
-            border: 2px solid #E5E5E5;
-            padding: 5px 10px;
+        .delete-btn .mobilebtn {
+            display:none;
         }
-        .delete-btn{
+        .edit-btn .mobilebtn {
+            display:none;
+        }
+        .delete-btn form button{
             display: inline-block;
-            float:right;
+            float: right;
+            margin: 0;
+            padding: 0 15px;
+            border-radius: 3px;
+            text-decoration: none !important;
+            text-transform: none !important;
+            line-height: 29px;
+            background-color: #f2f2f2;
+            color: #3d3d3d;
+            margin-left: 10px;
+            margin-top: 2px;
+        }
+        .add-btn button{
+            display: inline-block;
+            float: right;
+            margin: 0;
+            padding: 0 15px;
+            border-radius: 3px;
+            text-decoration: none !important;
+            text-transform: none !important;
+            line-height: 29px;
+            border: none !important;
+            background-color: #f2f2f2;
+            color: #3d3d3d !important;
             margin-left: 10px;
         }
-        .edit-btn {
+        .logout a{
             display: inline-block;
-            float:right;
-            margin-top: 5px;
+            float: right;
+            margin: 0;
+            padding: 0 15px;
+            border-radius: 3px;
+            text-decoration: none !important;
+            text-transform: none !important;
+            line-height: 29px;
+            border: none !important;
+            background-color: #f2f2f2;
+            color: #3d3d3d !important;
+            margin-left: 10px;
+        }
+        .sort-btn button {
+            display: inline-block;
+            float: right;
+            margin: 0;
+            padding: 0 15px;
+            border-radius: 3px;
+            text-decoration: none !important;
+            text-transform: none !important;
+            line-height: 29px;
+            border: none !important;
+            background-color: #f2f2f2;
+            color: #3d3d3d !important;
+            margin-left: 10px;
+        }
+        .edit-btn a {
+            display: inline-block;
+            float: right;
+            margin: 0;
+            padding: 0 15px;
+            border-radius: 3px;
+            text-decoration: none !important;
+            text-transform: none !important;
+            line-height: 29px;
+            background-color: #f2f2f2;
+            color: #3d3d3d;
+            margin-top: 2px;
         }
         .add-btn{
             display: inline-block;
             float:left;
             padding-top: 24px;
         }
-        .clear-btn {
+        .clear-btn a {
             display: inline-block;
             float:left;
-            width:20%;
-            margin-top: 5px;
+            margin: 0;
+            padding: 0 15px;
+            border-radius: 3px;
+            text-decoration: none !important;
+            text-transform: none !important;
+            line-height: 29px;
+            background-color: #f2f2f2;
+            color:#3d3d3d !important;
+        }
+        .clear-btn a:hover {
+            background-color: #e9e7e7;
+            cursor: pointer;
         }
         .sort-btn {
             display: inline-block;
             float:left;
-            margin-left: 20px;
-            width:20%;
+            margin-left: 10px;
+            margin-right: 10px;
+            
         }
         .create-name, .create-surname {
             display: inline-block;
@@ -415,15 +513,16 @@ body {
         }
         .input {
             line-height: 25px;
-            border: 2px solid #E5E5E5;
+            border: 1px solid #E5E5E5;
             border-radius: 5px;
-            width:88%;
+            width: 88%;
+            font-size: 16px;
             outline: none;
-            padding-left: 5px;
+            padding-left: 15px;
         }
         .input-log {
             line-height: 25px;
-            border: 2px solid #E5E5E5;
+            border: 1px solid #E5E5E5;
             border-radius: 5px;
             width:88%;
             outline: none;
@@ -436,27 +535,30 @@ body {
         .select {
             margin-bottom: 20px;
             height: 32px;
-            border: 2px solid #E5E5E5;
+            border: 1px solid #E5E5E5;
             border-radius: 5px;
             outline: none;
             margin-top: 25px;
             width: 25%;
         }
         .select-sort {
-            display: inline-block;
+            display: block;
             float: left;
             height: 29px;
-            border: 2px solid #E5E5E5;
-            border-radius: 5px;
+            border: none !important;
+            border-radius: 0;
             outline: none;
-            width: 25%;
+            width: 100%;
+            background-color: transparent;
+            padding-left: 5px;
+            padding-right: 5px;
         }
         .select-filter {
             display: inline-block;
             float: left;
             height: 29px;
-            border: 2px solid #E5E5E5;
-            border-radius: 5px;
+            border: 1px solid #E5E5E5;
+            border-radius: 3px;
             outline: none;
             width: 20%;
         }
@@ -480,25 +582,36 @@ body {
         .title-sort {
             display: inline-block;
             float: left;
-            width: 30%;
+            line-height: 29px;
+            font-size: 16px;
+            margin-right: 10px;
+            width: 100%;
+            max-width:72px;
         }
         .title-filter {
             display: inline-block;
             float: left;
-            width: 17%;
+            line-height: 29px;
+            font-size: 16px;
+            margin-right: 10px;
+            width: 100%;
+            max-width: 72px;
         }
         .log-top {
             display: inline-block;
             width: 100%;
+            margin-bottom: -60px;
+            border-bottom: 1px solid #f2f2f2;
         }
         .logged {
             display: inline-block;
             float: left;
             margin-top: 30px;
-            font-size: 20px;
-            line-height: 25px;
+            font-size: 16px;
+            line-height: 29px;
             margin-bottom: 10px;
-            width: 50%;
+            width: 100%;
+            max-width:240px;
         }
         .logout {
             display: inline-block;
@@ -542,15 +655,22 @@ body {
         }
         .error-block {
             display: block;
-            position: absolute;
+            position: fixed;
+            box-shadow: 0 0 25px rgb(0 0 0 / 20%);
             z-index: 1;
             width: 400px;
-            background-color: red;
-            margin-left: calc(50% - 200px);
+            background-color: #fff;
+            margin-left: 0;
             margin-top: 56px;
             padding: 20px;
             border-radius: 5px;
             margin-right: auto;
+            bottom: 30px;
+            left: 30px;
+        }
+        .error-block li {
+            color: red;
+            font-weight: 600;
         }
 
         .error-msg {
@@ -568,6 +688,7 @@ body {
         }
         .list-p .name-prop .name-prop2 {
             min-width: 100px;
+            line-height: 29px;
         }
         a {
             color: #4c4c4c;
@@ -659,7 +780,6 @@ body {
             }
             .mob-menu-ico-h {
                 display: none;
-                background: #6d647a;
                 border-radius: 4px;
                 margin-right: 10px;
                 float: right;
@@ -678,7 +798,7 @@ body {
                 color: #000;
               }
               
-              .menu-ico-str, .menu-ico-str1 {
+              .menu-ico-str, .menu-ico-str1, .menu-ico-str2 {
                 display: block;
                 float: left;
                 position: relative;
@@ -692,18 +812,6 @@ body {
                 margin-left: -2px;
               }
             
-              
-              .new .menu-ico-str {
-                transform: rotate(-45deg) translate(-9px, 6px);
-                z-index: 1;
-                
-              }
-              
-              .new .menu-ico-str1 {
-                transform: rotate(45deg) translate(-8px, -8px);
-                  margin-top: 17px;
-                z-index: 2;
-              }
     
     @media  only screen and (max-width: 1000px) {
         .block {
@@ -728,6 +836,26 @@ body {
         }
         .input { 
             width: 130%;
+        }
+        .delete-btn .mobilebtn {
+            display: block;
+            width:29px;
+            line-height: 29px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .edit-btn .mobilebtn {
+            display: block;
+            width: 29px;
+            line-height: 29px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .delete-btn .desktopbtn {
+            display:none;
+        }
+        .edit-btn .desktopbtn {
+            display:none;
         }
     }
     @media only screen and (max-width: 768px) {
@@ -855,6 +983,13 @@ body {
     }
     .block .mob-menu .logo-mob .name2 {
         margin-left: 35px;
+    }
+    .title-sort {
+        width: 100%;
+        max-width: 100%;
+        font-size: 14pt;
+        padding-left: 3px;
+        margin-bottom: 5px;
     }
     
     .mob-menu nav {

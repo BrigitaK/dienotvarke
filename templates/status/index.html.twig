@@ -6,21 +6,23 @@
 
     <h1 class="title">Statuses</h1>
 
-    <div class="sort">
-        <div class="title2 title-sort">statuss list order by:</div>
+    <div class="sort-box">
+        <div class="title2 title-sort">Order by:</div>
             <form action="{{ path('status_index')}}" method="GET">
-                <select class="select-sort" name="sort">
-                    <option value="default">default</option>
-                    <option value="title_az" {% if sortBy == 'title_az' %} selected {% endif %}>title</option>
-                    <option value="title_za" {% if sortBy == 'title_za' %} selected {% endif %}>title reverse</option>
-                </select>
-                <div class="sort-btn">
-                    <button class="edit" type="submit">Sort it!</button>
+                <div style="background-color:#f4f4f4; padding-right:5px; float: left; font-size: 16px; border-radius: 3px;">
+                    <select class="select-sort" name="sort">
+                        <option value="default">Default</option>
+                        <option value="title_az" {% if sortBy == 'title_az' %} selected {% endif %}>Title</option>
+                        <option value="title_za" {% if sortBy == 'title_za' %} selected {% endif %}>Title reverse</option>
+                    </select>
+                </div>
+                <div class="sort-btn" >
+                    <button class="sort" type="submit">Sort</button>
                 </div>
             <input type="hidden" name="token" value="{{ csrf_token('') }}"/>
             </form>
             <div class="clear-btn">
-                <a class="delete" action="{{ path('status_index')}}">clear</a>
+                <a class="delete2" action="{{ path('status_index')}}">Reset</a>
             </div>
     </div>
     {% for status in statuss %}
@@ -28,16 +30,22 @@
             <div class="name-surname">{{status.title}}</div>
                 <div class="count">
                     {% for note in status.notes %}
-                            <div class="count-list">{{note.title}}</div>
+                            <div class="count-list"><span class="dot"></span>{{note.title}}</div>
                     {% endfor %}
                 </div>
             <div class="delete-btn">
+            <style>
+            .mobilebtn {padding-left:5px !important; padding-right:5px !important; background-color:f2f2f2; color:#000 !important;}
+            .mobilebtn i {color:#000 !important;}
+            </style>
                 <form action="{{ path('status_delete', {id: status.id}) }}" method="POST">
-                <button class="delete" type="submit">DELETE</button>
-                </form>
+                <button class="delete desktopbtn" type="submit">Delete</button>
+                <button class="delete mobilebtn" type="submit"><i class="fa fa-trash"></i></button>
+                </form>    
             </div>
             <div class="edit-btn">
-                <a class="edit" href="{{ path('status_edit', {id: status.id}) }}">Edit status</a>
+                <a class="edit desktopbtn" href="{{ path('status_edit', {id: status.id}) }}">Edit status</a>
+                <a class="edit mobilebtn" href="{{ path('status_edit', {id: status.id}) }}"><i class="fa fa-edit"></i></a>
             </div>
         </div>
     {% endfor %}

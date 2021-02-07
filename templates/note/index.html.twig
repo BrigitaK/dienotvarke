@@ -5,8 +5,8 @@
 {% block body %}
 
     <h1 class="title">Notes</h1>
-    <div class="sort">
-        <div class="title2 title-filter">List filter by:</div>
+    <div class="sort-box">
+        <div class="title2 title-filter">Filter by:</div>
         <form action="{{ path('note_index')}}" method="GET">
             <select class="select-filter" name="status_id">
             <option value="0">View All</option>
@@ -15,11 +15,11 @@
                 {% endfor %}
             </select>
             <div class="sort-btn">
-                <button class="edit" type="submit">Filter it!</button>
+                <button class="edit" type="submit">Filter</button>
             </div>
         </form>
         <div class="clear-btn">
-            <a class="delete" href="{{ path('note_index')}}">clear</a>
+            <a class="delete" href="{{ path('note_index')}}">Reset</a>
         </div>
     </div>
     {% for note in notes %}
@@ -30,7 +30,7 @@
             </div>
             <div class="delete-btn">
                 <form action="{{ path('note_delete', {id: note.id}) }}" method="POST">
-                <button class="delete" type="submit">DELETE</button>
+                <button class="delete" type="submit">Delete</button>
                 </form>
             </div>
             <div class="edit-btn">
