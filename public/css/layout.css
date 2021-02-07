@@ -79,6 +79,7 @@ body {
     position: absolute;
 }
     .block .menu {
+        display: inline-block;
         width: 180px;
         float:left;
         padding-top: 35px;
@@ -86,6 +87,9 @@ body {
         color: #000;
         border-radius: 10px;
         margin-right: 10px;
+    }
+    .block .mob-menu {
+        display: none;
     }
     .block .menu .logo {
         display: inline-block;
@@ -187,11 +191,13 @@ body {
         float: left;
         min-height: 445px;
         background-color: #fff;
-        padding-left: 20px;
-        padding-right: 20px;
         border-left: 1px solid #E5E5E5;
         border-radius: 10px;
         padding-bottom: 70px;
+    }
+    .container1-a {
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .container1-login {
         width:100%;
@@ -395,6 +401,14 @@ body {
             outline: none;
             padding-left: 5px;
         }
+        .input-log {
+            line-height: 25px;
+            border: 2px solid #E5E5E5;
+            border-radius: 5px;
+            width:88%;
+            outline: none;
+            padding-left: 5px;
+        }
         .input-align {
             text-align: center;
             line-height: 40px;
@@ -551,3 +565,201 @@ body {
           .left {
               margin-left: 15px;
           }
+          .mob-menu {
+              width: 100%;
+          }
+        .block .mob-menu .logo-mob .name {
+            display: inline-block;
+            width: 24%;
+            margin-top: -10px;
+            margin-left: 20px;
+            font-size: 66px;
+            font-family: 'Brush Script MT';
+            color: #6d647a;
+    
+        }
+        .block  .mob-menu .logo-mob .name2 {
+            font-family: 'Brush Script MT';
+            font-size: 40px;
+            color: #6d647a;
+            margin-right: 27px;
+        }
+          .mob-menu .hamburger {
+            color: #fff;
+            display: none;
+            float: right;
+            font-size: 20px;
+            line-height: 20px;
+            margin-top: 0px;
+            padding: 8px;
+            border-radius: 3px;
+        }
+        .mob-menu .hamburger a {
+            color: #fff !important;
+        }
+        .mob-menu nav {
+            display: none;
+            float: right;
+            margin-left:10px;
+        }
+            .mob-menu nav .nav-link a {
+                display: inline-block;
+                float: left;
+                margin-left: 20px;
+                padding-bottom: 10px;
+                color: #ffff;
+                text-decoration: none;
+                position: relative;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 14px;
+                margin-top: 10px;
+                padding: 5px 0;
+            }
+                .mob-menu nav .nav-link a::after {
+                    display: inline-block;
+                    content: '';
+                    height: 1px;
+                    background-color: #fff;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    right: 50%;
+                    transition: all 0.2s;
+                }
+                .mob-menu nav .nav-link a:hover::after {
+                    left: 0;
+                    right: 0;
+                }
+            .mob-menu nav .nav-link a.active::after {
+                left: 0;
+                right: 0;
+            }
+            .mob-menu-ico-h {
+                display: none;
+                background: #6d647a;
+                border-radius: 4px;
+                margin-right: 10px;
+                float: right;
+                position: relative;
+                margin-top: 10px;
+              }
+              
+              .mob-menu-icon {
+                display: block;
+                width: 40px;
+                height: 40px;
+                position: relative;
+                padding: 10px;
+                float: right;
+                cursor: pointer;
+                color: #000;
+              }
+              
+              .menu-ico-str, .menu-ico-str1 {
+                display: block;
+                float: left;
+                position: relative;
+                width: 25px;
+                height: 3px;
+                background-color: #000;
+                margin-bottom: 2px;
+                margin-top: 3px;
+                border-radius: 2px;
+                text-align: center;
+                margin-left: -2px;
+              }
+            
+              
+              .new .menu-ico-str {
+                transform: rotate(-45deg) translate(-9px, 6px);
+                z-index: 1;
+                
+              }
+              
+              .new .menu-ico-str1 {
+                transform: rotate(45deg) translate(-8px, -8px);
+                  margin-top: 17px;
+                z-index: 2;
+              }
+    
+    @media (max-width: 1000px) {
+        .block {
+            max-width: 800px;
+        }   
+        .create-name {
+            width: 50%;
+        }
+        .select {
+            width: 44%;
+        }
+    }
+    @media (max-width: 900px) {
+        .block {
+            max-width: 700px;
+        }   
+        .create-name {
+            width: 76%;
+        }
+        .select {
+            width: 44%;
+        }
+        .input { 
+            width: 130%;
+        }
+    }
+    @media (max-width: 768px) {
+        .mob-menu .hamburger {
+            display: inline-block;
+        }
+        
+        .mob-menu nav {
+            display: none;
+            
+        }
+        .block .menu {
+            display: none;
+        }
+        .block .mob-menu {
+            display: inline-block;
+        }
+            .mob-menu nav.visible {
+                 width: 100%;
+                display: block;
+                margin-top: 30px;
+                text-align: center;
+                margin-bottom: -10px;
+                text-align: center;
+                
+            }
+                .mob-menu nav.visible  a {
+                    width: 100%;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    color: #000;
+                    font-weight: 600;
+                    line-height: 40px;
+                    border-top: 1px solid rgb(243, 239, 239);
+                    margin-left: 0px;
+                }
+                .mob-menu nav.visible .men-user {
+                    display: inline-block;
+                    width: 100%;
+                }
+                .mob-menu nav a::after {
+                    display: none;
+                }
+                .container1 {
+                    width:100%;
+                }
+                .block {
+                max-width: 600px;
+                }
+                .mob-menu-ico-h {
+                    display: block;
+                }
+                .men-user {
+                    border-radius: 0;
+                }
+}

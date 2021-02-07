@@ -72,7 +72,42 @@
                 </nav>
             </div>
             <div class="container1">
+                <div class ="mob-menu">
+                    <a class="logo-mob" href="#"><span class="name">Daily</span><span class="name2">routine</span></a>
+
+                    <div class="hamburger">
+                    <a class="mob-menu-ico-h">
+                        <div class="mob-menu-icon">
+                            <div class="menu-ico-str"></div>
+                            <div class="menu-ico-str1"></div>
+                        </div>
+                    </a>
+                </div>
+                <nav>
+                    <div class="nav">
+                        <a href="{{ path('status_index') }}">Statuses list</a>
+                    </div>
+                    <div class="nav">
+                        <a href="{{ path('note_index') }}">Notes list</a>
+                    </div>
+                    <div class="nav">
+                        <a href="{{ path('note_create') }}">New note</a>
+                    </div>
+                    <div class="nav">
+                        <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                    <div class="nav item men-user">
+                        <div class="nav-user" 
+                            <span class="men-user-title">Online user</span>
+                            <span class="dots"></span>
+                            <span class="nav-user-email">{{ app.user.username }}</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+                <div class="container1-a">
                 {% block body %}{% endblock %}
+                </div>
             </div>
     </div>
     </body>
